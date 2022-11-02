@@ -36,9 +36,44 @@
             padding: 0.5rem
 
 @media (max-width: 576px)
+    @keyframes toX1
+        50%
+            transform: translateY(2px)
+        100%
+            transform: translateY(2px) rotate(45deg)
+    @keyframes toX2
+        50%
+            background-color: rgba(0, 0, 0, 0)
+        100%
+            background-color: rgba(0, 0, 0, 0)
+    @keyframes toX3
+        50%
+            transform: translateY(-2px) rotate(-15deg)
+        100%
+            transform: translateY(-2px) rotate(-45deg)
+            
     .navbar
         &__toggle
             display: block
+            border: none
+            padding: 0.5rem
+            background-color: rgba(0, 0, 0, 0)
+        &__togline
+            height: 2px
+            width: 20px
+            background-color: black
+            animation-fill-mode: both
+            animation-duration: .6s
+            animation-timing-function: linear
+            &_1
+                transform: translateY(-5px)
+                animation-name: toX1
+                
+            &_2
+                animation-name: toX2
+            &_3
+                transform: translateY(5px)
+                animation-name: toX3
         &__logo-text
             display: none
     
@@ -53,9 +88,9 @@
             padding: 0
             width: 100%
             &:last-child
-                padding-bottom: 0.5rem
+                margin-bottom: 0.5rem
             &:first-child
-                padding-top: 0.5rem
+                margin-top: 0.5rem
             a
                 display: block
                 padding: 0.5rem 0
