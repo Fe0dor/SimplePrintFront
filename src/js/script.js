@@ -4,6 +4,7 @@ const navItems = document.querySelectorAll('.nav__item')
 const header = document.querySelector('.header');
 let isNavActive = false;
 let isScrolled = false;
+let isMobile = window.innerWidth <= 576;
 
 window.addEventListener('scroll', () => {
     if (scrollY > 10) {
@@ -17,8 +18,9 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('resize', () => {
     let w = window.innerWidth;
-    if (w <= 576) {
+    if ((w <= 576) != isMobile) {
         closeNav();
+        isMobile = w <= 576;
     }
 });
 
@@ -40,6 +42,7 @@ function setHeaderBackground(isSet) {
 const closeNav = function () {
     isNavActive = false;
     setNavbar(false);
+    navbarToggle.classList.remove('navbar__toggle_active');
     navItems.forEach(element => {
         element.removeEventListener('click', closeNav);
     });
@@ -60,11 +63,11 @@ navbarToggle.addEventListener('click', () => {
 function setNavbar(isOpen) {
     if(isOpen) {
         nav.style.height = `${nav.scrollHeight}px`;
-        navbarToggle.classList.remove('navbar__toggle_active');
+        navbarToggle.classList.add('navbar__toggle_active');
         setHeaderBackground(true);
     } else {
         nav.style = '';
-        navbarToggle.classList.add('navbar__toggle_active')
+        navbarToggle.classList.remove('navbar__toggle_active')
         setHeaderBackground(isScrolled);
     }
 }
