@@ -40,26 +40,31 @@ function setHeaderBackground(isSet) {
 const closeNav = function () {
     isNavActive = false;
     setNavbar(false);
-    nav.removeEventListener('click', closeNav);
+    navItems.forEach(element => {
+        element.removeEventListener('click', closeNav);
+    });
 }
 
 navbarToggle.addEventListener('click', () => {
     isNavActive = !isNavActive;
     if(isNavActive) {
         setNavbar(true);
-        nav.addEventListener('click', closeNav);
+        navItems.forEach(element => {
+            element.addEventListener('click', closeNav);
+        });
     } else {
         closeNav();
-        nav.removeEventListener('click', closeNav);
     }
 });
 
 function setNavbar(isOpen) {
     if(isOpen) {
         nav.style.height = `${nav.scrollHeight}px`;
+        navbarToggle.classList.remove('navbar__toggle_active');
         setHeaderBackground(true);
     } else {
         nav.style = '';
+        navbarToggle.classList.add('navbar__toggle_active')
         setHeaderBackground(isScrolled);
     }
 }
