@@ -1,7 +1,8 @@
 .header
     position: fixed
+    z-index: 2000
     width: 100%
-    border-bottom: 3px solid rgba(0, 0, 0, 0)
+    border-bottom: rgba(0, 0, 0, 0)
     transition: background-color .2s, border-color .2s
     &_scrolled
         background-color: $light-blue
@@ -41,7 +42,7 @@
             display: block
             border: none
             padding: 1rem 0.5rem
-            background-color: rgba(0, 0, 0, 0)
+            background-color: $main-border
             outline: 0 !important
             &_active
                 .navbar__togline

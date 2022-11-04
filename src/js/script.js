@@ -7,7 +7,7 @@ let isScrolled = false;
 let isMobile = window.innerWidth <= 576;
 
 window.addEventListener('scroll', () => {
-    if (scrollY > 10) {
+    if (scrollY > 20) {
         isScrolled = true;
         setHeaderBackground(true);
     } else {
