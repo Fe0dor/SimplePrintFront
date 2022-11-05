@@ -1,15 +1,17 @@
 .main-sect
     height: 100vh
-    min-height: 800px
+    min-height: 400px
     position: relative
     border-bottom: $main-border
     .container
-        padding-top: 51px
+        padding-top: 30px
     &__main-thing
-        margin-top: 4rem
+        margin-top: 2rem
         font-family: 'Roboto Slab'
-        font-size: 5rem
-        max-width: 700px
+        font-size: 2.5rem
+        font-style: normal
+        font-weight: 400
+        line-height: 1.5em
 
 .pets-container
     position: absolute
@@ -21,36 +23,93 @@
     z-index: -1
     &__super-huge
         position: absolute
-        bottom: -69px
-        right: calc(2.5 * 40% - 1500px)
+        top: 250px
+        right: -70px
+        transform: scale(0.8)
     &__huge-printer
         position: absolute
-        bottom: 160px
-        right: 210px
+        display: none
     &__huge-yellow
         position: absolute
-        bottom: -3px
-        right: 400px
+        display: none
     &__huge-orange
         position: absolute
-        left: 0
-        bottom: -66px
+        display: none
 
-// @media (max-width: 576px)
+@media (min-width: 576px)
+    .main-sect
+        .container
+            padding-left: 2rem
+        &__main-thing
+            font-size: 2.7rem
+            padding-bottom: 20px
+    .pets-container
+        &__super-huge
+            top: 150px
 
-// @media (max-width: 768px)
-// @media (max-width: 992px)
-// @media (max-width: 1200px)
-//     .pets-container
-//         &__super-huge
-//             bottom: -69px
-//             right: calc(-1000px + 2 * 40vw)
-//         &__huge-printer
-//             display: none
-//         &__huge-yellow
-//             bottom: -3px
-//             right: 50px
-//         &__huge-orange
-//             left: 0
-//             bottom: -66px
+@media (min-width: 768px)
+    .main-sect
+        max-height: 773px
+        &__main-thing
+            font-size: 3rem
+            max-width: 700px
+    .pets-container
+        &__super-huge
+            top: 50px
+        &__huge-printer
+            bottom: 160px
+            right: -150px
+        &__huge-yellow
+            display: block
+            bottom: -3px
+            right: 250px
+            height: 150px
+            svg
+                height: 100%
+        &__huge-orange
+            display: none
+@media (min-width: 992px)
+    .main-sect
+        max-height: 9000px
+        min-height: 750px
+        &__main-thing
+            padding-top: 2rem
+            font-size: 4rem
+            max-width: 700px
+    .pets-container
+        &__super-huge
+            top: auto
+            bottom: -69px
+            right: -50px
+            transform: scale(1)
+        &__huge-printer
+            bottom: -30px
+            right: 10px
+        &__huge-yellow
+            display: block
+            height: 160px
+        &__huge-orange
+            display: block
+            left: 0
+            bottom: -80px
+@media (min-width: 1200px)
+    .pets-container
+        &__super-huge
+            top: auto
+            bottom: -69px
+            right: 0
+        &__huge-printer
+            display: block
+            bottom: 160px
+            right: 210px
+        &__huge-yellow
+            display: block
+            bottom: -3px
+            right: 400px
+            height: 200px
+            svg
+                height: 100%
+        &__huge-orange
+            left: 0
+            bottom: -66px
 // @media (max-width: 1400px)

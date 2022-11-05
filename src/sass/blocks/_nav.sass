@@ -2,11 +2,11 @@
     position: fixed
     z-index: 2000
     width: 100%
-    border-bottom: rgba(0, 0, 0, 0)
+    border-bottom: none
     transition: background-color .2s, border-color .2s
     &_scrolled
         background-color: $light-blue
-        border-bottom: 3px solid black
+        border-bottom: $main-border
 
 .navbar
     display: flex
@@ -42,7 +42,7 @@
             display: block
             border: none
             padding: 1rem 0.5rem
-            background-color: $main-border
+            background-color: rgba(0, 0, 0, 0)
             outline: 0 !important
             &_active
                 .navbar__togline
@@ -60,8 +60,6 @@
                 transform: translateY(-5px)
             &_3
                 transform: translateY(5px)
-        &__logo-text
-            display: none
     
     .nav
         width: 100%
