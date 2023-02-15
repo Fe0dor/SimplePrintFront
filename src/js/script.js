@@ -4,7 +4,7 @@ const navItems = document.querySelectorAll('.nav__item')
 const header = document.querySelector('.header');
 let isNavActive = false;
 let isScrolled = false;
-let isMobile = window.innerWidth <= 576;
+let isMobile = window.innerWidth <= 768;
 
 window.addEventListener('scroll', () => {
     if (scrollY > 20) {
@@ -18,9 +18,9 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('resize', () => {
     let w = window.innerWidth;
-    if ((w <= 576) != isMobile) {
+    if ((w <= 768) != isMobile) {
         closeNav();
-        isMobile = w <= 576;
+        isMobile = w <= 768;
     }
 });
 

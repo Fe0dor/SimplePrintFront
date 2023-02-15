@@ -2,13 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap')
 @import base/_varibles
 @import blocks/_nav
-@import blocks/_sections
+@import blocks/_main-thing
 @import blocks/_button
+@import blocks/_slider
+@import blocks/_about-us
 
 html
     font-size: 16px
 
 .container
-    padding: 0 0.75rem
+    padding: 0 1.5rem
     margin: 0 auto
-    max-width: 1140px
+
+.nowrap
+    white-space: nowrap
+
+@media (min-width: 576px)
+    .container
+        max-width: 540px
+
+@media (min-width: 768px)
+    .container
+        max-width: 720px
+
+@media (min-width: 992px)
+    .container
+        max-width: 960px
+
+@media (min-width: 1200px)
+    .container
+        max-width: 1140px
+
+@media (min-width: 1400px)
+    .container
+        max-width: 1320px
