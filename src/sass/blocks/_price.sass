@@ -1,0 +1,237 @@
+.card
+    position: relative
+    z-index: -2
+    &__back
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        background-color: $rose
+        height: 180px
+        margin-bottom: 10px
+        margin-right: 14px
+        margin-top: calc(var(--circle-size) / 2)
+        border: var(--border)
+        &::before
+            content: ""
+            position: absolute
+            border-radius: 50%
+            top: calc(var(--circle-size) / -2 - 2px)
+            left: calc(50% + var(--circle-size) / -2)
+            height: var(--circle-size)
+            width: var(--circle-size)
+            border: var(--border)
+            background-color: #FFF
+        &::after
+            content: ""
+            position: absolute
+            top: calc(var(--circle-size) / 2 * -1 - 4px)
+            left: calc(50% + var(--circle-size) / -2)
+            height: calc(var(--circle-size) / 2 + 2px)
+            width: var(--circle-size)
+            background-color: #FFF
+    &__type
+        line-height: 1.3em
+        margin: 0.4rem
+        position: absolute
+        top: 0
+        left: 0
+    &__for
+        line-height: 1.3em
+        margin: 0.4rem
+        position: absolute
+        top: 0
+        right: 0
+    &__img
+        margin-top: 15px
+        height: 110px
+        pointer-events: none
+    &__price
+        z-index: 2
+        position: absolute
+        right: 0
+        bottom: 0
+        padding: 0 10px 6px 0
+        font-size: 24px
+        font-weight: 700
+    &__price-holder
+        position: absolute
+        right: 0
+        bottom: 0
+        height: 93px
+        pointer-events: none
+
+@media (min-width: 768px)
+    .card
+        &__back
+            height: 250px
+            margin-bottom: 25px
+            margin-right: 19px
+            &::after
+                top: calc(var(--circle-size) / 2 * -1 - 5px)
+        &__type
+            font-size: 24px
+            margin: 0.6rem 1rem
+        &__for
+            font-size: 24px
+            margin: 0.6rem 1rem
+        &__img
+            height: 170px
+        &__price
+            padding: 0 10px 2px 0
+            font-size: 48px
+        &__price-holder
+            height: 160px
+
+.price
+    overflow: hidden
+    &__header
+        display: inline-block
+        text-align: center
+        font-size: 24px
+        font-weight: 400
+        font-family: 'Roboto Slab', sans-serif
+        position: relative
+        transform: rotate(23deg)
+        &::before
+            content: ""
+            z-index: -1
+            position: absolute
+            top: -20px
+            right: -25px
+            background-image: url("../../img/header-holder.svg")
+            background-repeat: no-repeat
+            height: 100px
+            width: 120px
+    &__type
+        font-style: normal
+        font-weight: 400
+        writing-mode: vertical-rl
+        transform: rotate(180deg)
+        margin: 0
+
+
+// -----------------
+// GRID
+// -----------------
+
+.price
+    display: grid
+    grid-template-columns: 2rem 60px 1fr 50px 2rem
+    grid-template-rows: auto 1fr 1fr 0px 1fr 1fr
+    gap: 25px 0
+    &__header-wrapper
+        position: relative
+        bottom: -1.5rem
+        padding-top: 4rem
+        grid-column: 2/5
+        justify-self: end
+    &__type
+        align-self: center
+        &_1
+            justify-self: start
+            grid-column: 2/3
+            grid-row: 2/3
+        &_2
+            justify-self: end
+            grid-column: 4/5
+            grid-row: 5/6
+            transform: none
+    &__line
+        align-self: center
+        &_1
+            grid-column: 1/3
+            grid-row: 3/4 
+            justify-self: start
+            padding-right: 10px
+        &_2
+            grid-column: 4/6
+            grid-row: 6/7
+            justify-self: end
+            padding-left: 10px
+
+.card
+    &_1
+        grid-column: 3/5
+    &_2
+        grid-column: 3/5
+    &_3
+        grid-column: 2/4
+        grid-row: 5/6
+    &_4
+        grid-column: 2/4
+        grid-row: 6/7
+
+@media (min-width: 576px)
+    .price
+        grid-template-columns: 1fr 60px 367px 60px 1fr
+
+@media (min-width: 768px)
+    .price
+        grid-template-columns: 1fr 100px 367px 100px 1fr
+        &__header
+            font-size: 48px
+            &::before
+                height: 170px
+                width: 221px
+                right: -60px
+                top: -30px
+                background-size: cover
+                background-image: url("../../img/header-holder-comp.svg")
+            &-wrapper
+                bottom: -2rem
+                right: -3rem
+                padding-top: 5rem
+        &__type
+            font-size: 32px
+        &__line
+            width: 141px
+            height: auto
+
+@media (min-width: 992px)
+    .price
+        grid-template-columns: 1fr 60px 4fr 4fr 1fr
+        grid-template-rows: auto auto auto //???????
+        gap: 25px 40px
+        &__type
+            &_1
+                grid-column: 2/3
+                grid-row: 2/3
+            &_2
+                justify-self: start
+                grid-column: 2/3
+                grid-row: 3/4
+                transform: rotate(180deg)
+        &__line
+            display: none
+            &_1
+                grid-column: 1/2
+                grid-row: 2/3
+                padding-right: 10px
+            &_2
+                grid-column: 1/2
+                grid-row: 3/4
+                justify-self: start
+                padding-left: 10px
+    .card
+        &_1
+            grid-column: 3/4
+        &_2
+            grid-column: 4/5
+        &_3
+            grid-column: 3/4
+            grid-row: 3/4
+        &_4
+            grid-column: 4/5
+            grid-row: 3/4
+
+@media (min-width: 1200px)
+    .price
+        gap: 25px 75px
+
+@media (min-width: 1400px)
+    .price
+        &__line
+            display: block
+            &_2
+                padding: 0
