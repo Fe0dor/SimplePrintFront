@@ -1,0 +1,36 @@
+.list
+    display: inline-block
+    padding: 0
+    margin: 0
+    list-style-type: none
+    li
+        a
+            color: #000
+
+.footer
+    justify-content: space-between
+    margin-top: 8rem
+    padding: 5rem 0
+    background-color: $light-blue
+    border-top: var(--border)
+    &__content-wrapper
+        display: flex
+        flex-wrap: wrap
+    &__nav
+        margin-right: 40px
+        margin-bottom: 40px
+    &__logo
+        width: 100%
+        margin-bottom: 40px
+        &-text
+            margin-left: 10px
+            display: inline-block
+        svg
+            display: inline-block
+
+@media (min-width: 768px)
+    .footer
+        &__logo
+            width: auto
+        &__content-wrapper
+            justify-content: space-between

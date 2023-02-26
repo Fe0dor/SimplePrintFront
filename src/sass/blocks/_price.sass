@@ -86,23 +86,8 @@
 .price
     overflow: hidden
     &__header
-        display: inline-block
-        text-align: center
-        font-size: 24px
-        font-weight: 400
-        font-family: 'Roboto Slab', sans-serif
-        position: relative
-        transform: rotate(23deg)
-        &::before
-            content: ""
-            z-index: -1
-            position: absolute
-            top: -20px
-            right: -25px
-            background-image: url("../../img/header-holder.svg")
-            background-repeat: no-repeat
-            height: 100px
-            width: 120px
+        h2
+            transform: rotate(23deg)
     &__type
         font-style: normal
         font-weight: 400
@@ -120,9 +105,9 @@
     grid-template-columns: 2rem 60px 1fr 50px 2rem
     grid-template-rows: auto 1fr 1fr 0px 1fr 1fr
     gap: 25px 0
-    &__header-wrapper
-        position: relative
-        bottom: -1.5rem
+    &__header
+        bottom: -1rem
+        right: -1rem
         padding-top: 4rem
         grid-column: 2/5
         justify-self: end
@@ -170,18 +155,9 @@
     .price
         grid-template-columns: 1fr 100px 367px 100px 1fr
         &__header
-            font-size: 48px
-            &::before
-                height: 170px
-                width: 221px
-                right: -60px
-                top: -30px
-                background-size: cover
-                background-image: url("../../img/header-holder-comp.svg")
-            &-wrapper
-                bottom: -2rem
-                right: -3rem
-                padding-top: 5rem
+            bottom: -1.5rem
+            right: -4rem
+            padding-top: 5rem
         &__type
             font-size: 32px
         &__line

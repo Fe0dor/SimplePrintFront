@@ -71,3 +71,18 @@ function setNavbar(isOpen) {
         setHeaderBackground(isScrolled);
     }
 }
+
+let accrodionItems = document.querySelectorAll('.accordion__item');
+let accordionActiveItem = null;
+
+for (let i = 0; i < accrodionItems.length; i++) {
+    accrodionItems[i].children[0].addEventListener('click', () => {
+        if (accrodionItems[i].children[1].style.maxHeight) {
+            accrodionItems[i].children[1].style.maxHeight = null;
+            accrodionItems[i].children[0].children[1].children[0].classList.remove('accordion__line-wrapper_active');
+        } else {
+            accrodionItems[i].children[1].style.maxHeight = accrodionItems[i].children[1].scrollHeight + "px";
+            accrodionItems[i].children[0].children[1].children[0].classList.add('accordion__line-wrapper_active');
+        }
+    });
+}
